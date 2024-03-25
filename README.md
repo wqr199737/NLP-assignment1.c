@@ -9,13 +9,13 @@ Copy code
 pip install torch torchvision torchaudio
 pip install transformers
 Dataset Preparation
-```bash
+
 dataset: https://github.com/tatsu-lab/stanford_alpaca
 
 Model Loading and Fine-Tuning
 Load a Pre-Trained Model
 Select and load the pre-trained model along with its tokenizer. 
-```bash
+
 python
 Copy code
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -23,23 +23,23 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 model_name = "<assignment1c>"  # e.g., "EleutherAI/gpt-neo-2.7B"
 tokenizer = AutoTokenizer.from_pretrained(assignment1c)
 model = AutoModelForCausalLM.from_pretrained(assignment1c)
-```bash
+
 
 Prepare Your Data
 Encode your texts using the tokenizer:
 
-```bash
+
 python
 Copy code
 train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 val_encodings = tokenizer(val_texts, truncation=True, padding=True)
 Then, prepare your dataset for training.
-```bash
+
 
 Fine-Tuning
 Use the Hugging Face Trainer for fine-tuning:
 
-```bash
+
 python
 Copy code
 from transformers import Trainer, TrainingArguments
@@ -61,12 +61,12 @@ trainer = Trainer(
 )
 
 trainer.train()
-```bash
+
 Adjust training parameters as necessary.
 
 Generating Text or Code
 Generate outputs by providing a prompt to your model:
-```bash
+
 python
 Copy code
 prompt = "Your prompt text here"
