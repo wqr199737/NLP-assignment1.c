@@ -1,7 +1,7 @@
-1. Prerequisites
+**1.** Prerequisites
 Ensure you have Python (>= 3.6) installed. It's recommended to use a virtual environment.
 
-Installation
+**2.** Installation
 First, install the required libraries:
 
 ```bash
@@ -10,9 +10,9 @@ pip install torch torchvision torchaudio
 pip install transformers
 Dataset Preparation
 ```
-dataset: https://github.com/tatsu-lab/stanford_alpaca
+**3.** dataset: https://github.com/tatsu-lab/stanford_alpaca
 
-Model Loading and Fine-Tuning
+**4.** Model Loading and Fine-Tuning
 Load a Pre-Trained Model
 Select and load the pre-trained model along with its tokenizer. 
 ```bash
@@ -25,7 +25,7 @@ tokenizer = AutoTokenizer.from_pretrained(assignment1c)
 model = AutoModelForCausalLM.from_pretrained(assignment1c)
 ```
 
-Prepare Your Data
+**5.** Prepare Your Data
 Encode your texts using the tokenizer:
 
 ```bash
@@ -34,10 +34,8 @@ Copy code
 train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 val_encodings = tokenizer(val_texts, truncation=True, padding=True)
 ```
-Then, prepare your dataset for training.
 
-
-Fine-Tuning
+**6.** Fine-Tuning
 Use the Hugging Face Trainer for fine-tuning:
 
 ```bash
