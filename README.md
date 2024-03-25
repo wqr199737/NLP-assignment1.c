@@ -9,7 +9,7 @@ Copy code
 pip install torch torchvision torchaudio
 pip install transformers
 Dataset Preparation
-``bash
+```
 dataset: https://github.com/tatsu-lab/stanford_alpaca
 
 Model Loading and Fine-Tuning
