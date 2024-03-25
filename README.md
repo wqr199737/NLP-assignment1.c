@@ -4,7 +4,7 @@ Ensure you have Python (>= 3.6) installed. It's recommended to use a virtual env
 Installation
 First, install the required libraries:
 
-bash
+```bash
 Copy code
 pip install torch torchvision torchaudio
 pip install transformers
