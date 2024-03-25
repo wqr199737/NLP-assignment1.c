@@ -1,4 +1,4 @@
-Prerequisites
+1. Prerequisites
 Ensure you have Python (>= 3.6) installed. It's recommended to use a virtual environment.
 
 Installation
