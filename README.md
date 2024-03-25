@@ -9,37 +9,40 @@ Copy code
 pip install torch torchvision torchaudio
 pip install transformers
 Dataset Preparation
-Prepare your dataset by splitting it into training and validation sets. Format the dataset appropriately for your task, which may include tokenization.
+```bash
+dataset: https://github.com/tatsu-lab/stanford_alpaca
 
 Model Loading and Fine-Tuning
 Load a Pre-Trained Model
-Select and load the pre-trained model along with its tokenizer. For example:
-
+Select and load the pre-trained model along with its tokenizer. 
+```bash
 python
 Copy code
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_name = "<MODEL-NAME>"  # e.g., "EleutherAI/gpt-neo-2.7B"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
-Replace <MODEL-NAME> with the model you intend to use.
+model_name = "<assignment1c>"  # e.g., "EleutherAI/gpt-neo-2.7B"
+tokenizer = AutoTokenizer.from_pretrained(assignment1c)
+model = AutoModelForCausalLM.from_pretrained(assignment1c)
+```bash
 
 Prepare Your Data
 Encode your texts using the tokenizer:
 
+```bash
 python
 Copy code
 train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 val_encodings = tokenizer(val_texts, truncation=True, padding=True)
 Then, prepare your dataset for training.
+```bash
 
 Fine-Tuning
 Use the Hugging Face Trainer for fine-tuning:
 
+```bash
 python
 Copy code
 from transformers import Trainer, TrainingArguments
-
 training_args = TrainingArguments(
     output_dir='./results',
     num_train_epochs=3,
@@ -58,11 +61,12 @@ trainer = Trainer(
 )
 
 trainer.train()
+```bash
 Adjust training parameters as necessary.
 
 Generating Text or Code
 Generate outputs by providing a prompt to your model:
-
+```bash
 python
 Copy code
 prompt = "Your prompt text here"
@@ -76,7 +80,7 @@ print(generated_text)
 <details>
 <summary> <strong> Running the code </strong> </summary>
 
-1. Set environment variables `OPENAI_API_KEY` to your OpenAI API key.
+1. Set environment variables 
 2. Install the dependencies with `pip install -r requirements.txt`.
 3. Run `python -m generate_instruction generate_instruction_following_data` to generate the data.
 
